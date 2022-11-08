@@ -1,9 +1,10 @@
 import './App.css';
+import Main from './Pages/Main/Main';
 
 function App() {
   return (
     <div className="App">
-      <h1 className='text-center'>Hellow</h1>
+      <Main></Main>
     </div >
   );
 }
