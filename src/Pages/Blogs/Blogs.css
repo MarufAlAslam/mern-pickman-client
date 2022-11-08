@@ -1,0 +1,10 @@
+.breadcrumb {
+    background-image: linear-gradient(transparent, #2A303C), url("../Blogs/Blog/blog.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
