@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Banner.css'
 
 const Banner = () => {
@@ -12,8 +13,8 @@ const Banner = () => {
                 </p>
 
                 <div className='flex mt-10 justify-center'>
-                    <button className='btn btn-primary'>View Services</button>
-                    <button className='btn btn-ghost'>View Plans</button>
+                    <Link to='/services' className='btn btn-primary'>View Services</Link>
+                    <a href='/#contact' className='btn btn-ghost'>Contact Me</a>
                 </div>
             </div>
         </div>

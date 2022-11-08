@@ -1,0 +1,4 @@
+.clientTable td {
+    border: 10px solid #2A303C;
+    background: linear-gradient(45deg, white, rgba(0, 0, 0, 0.3), white);
+}

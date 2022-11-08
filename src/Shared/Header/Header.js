@@ -19,10 +19,10 @@ const Header = () => {
                                 <NavLink className="text-white lg:ml-4" to='/'>Home</NavLink>
                             </li>
                             <li tabIndex={0}>
-                                <NavLink className="text-white lg:ml-4" to='/about'>About</NavLink>
+                                <NavLink className="text-white lg:ml-4" to='/services'>Services</NavLink>
                             </li>
                             <li tabIndex={0}>
-                                <NavLink className="text-white lg:ml-4" to='/services'>Services</NavLink>
+                                <NavLink className="text-white lg:ml-4" to='/blogs'>Blogs</NavLink>
                             </li>
                             <li tabIndex={0}>
                                 <NavLink className="text-white lg:ml-4" to='/login'>Login</NavLink>
