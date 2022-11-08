@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import Main from './Pages/Main/Main';
 import Services from './Pages/Services/Services';
@@ -15,12 +16,12 @@ function App() {
           element: <Home></Home>,
         },
         {
-          path: 'about',
-          element: <div>About</div>,
-        },
-        {
           path: 'services',
           element: <Services></Services>,
+        },
+        {
+          path: 'blogs',
+          element: <Blogs></Blogs>,
         },
         {
           path: '*',

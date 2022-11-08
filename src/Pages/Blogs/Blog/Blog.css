@@ -1,0 +1,4 @@
+.peer:checked~.peer-checked\:bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
