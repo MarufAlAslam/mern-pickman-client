@@ -25,10 +25,10 @@ const Header = () => {
                             <li>
                                 <NavLink className="text-white lg:ml-4" to='/'>Home</NavLink>
                             </li>
-                            <li tabIndex={0}>
+                            <li>
                                 <NavLink className="text-white lg:ml-4" to='/services'>Services</NavLink>
                             </li>
-                            <li tabIndex={0}>
+                            <li>
                                 <NavLink className="text-white lg:ml-4" to='/blogs'>Blogs</NavLink>
                             </li>
 
@@ -54,10 +54,10 @@ const Header = () => {
                                     :
                                     (
                                         <div className='flex'>
-                                            <li tabIndex={0}>
+                                            <li>
                                                 <NavLink className="text-white lg:ml-4" to='/login'>Login</NavLink>
                                             </li>
-                                            <li tabIndex={0}>
+                                            <li>
                                                 <NavLink className="text-white lg:ml-4" to='/register'>Register</NavLink>
                                             </li>
                                         </div>

@@ -18,34 +18,36 @@ const Clients = () => {
                 </h2>
 
                 <table className='table w-full text-center mt-8 bg-white clientTable'>
-                    <tr>
-                        <td className='p-4 w-1/4'>
-                            <img src={one} className='block mx-auto p-3' alt="" />
-                        </td>
-                        <td className='p-4 w-1/4'>
-                            <img src={two} className='block mx-auto p-3' alt="" />
-                        </td>
-                        <td className='p-4 w-1/4'>
-                            <img src={three} className='block mx-auto p-3' alt="" />
-                        </td>
-                        <td className='p-4 w-1/4'>
-                            <img src={four} className='block mx-auto p-3' alt="" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className='p-4 w-1/4'>
-                            <img src={five} className='block mx-auto p-3' alt="" />
-                        </td>
-                        <td className='p-4 w-1/4'>
-                            <img src={six} className='block mx-auto p-3' alt="" />
-                        </td>
-                        <td className='p-4 w-1/4'>
-                            <img src={seven} className='block mx-auto p-3' alt="" />
-                        </td>
-                        <td className='p-4 w-1/4'>
-                            <img src={eight} className='block mx-auto p-3' alt="" />
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td className='p-4 w-1/4'>
+                                <img src={one} className='block mx-auto p-3' alt="" />
+                            </td>
+                            <td className='p-4 w-1/4'>
+                                <img src={two} className='block mx-auto p-3' alt="" />
+                            </td>
+                            <td className='p-4 w-1/4'>
+                                <img src={three} className='block mx-auto p-3' alt="" />
+                            </td>
+                            <td className='p-4 w-1/4'>
+                                <img src={four} className='block mx-auto p-3' alt="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className='p-4 w-1/4'>
+                                <img src={five} className='block mx-auto p-3' alt="" />
+                            </td>
+                            <td className='p-4 w-1/4'>
+                                <img src={six} className='block mx-auto p-3' alt="" />
+                            </td>
+                            <td className='p-4 w-1/4'>
+                                <img src={seven} className='block mx-auto p-3' alt="" />
+                            </td>
+                            <td className='p-4 w-1/4'>
+                                <img src={eight} className='block mx-auto p-3' alt="" />
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
