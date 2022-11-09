@@ -7,7 +7,7 @@ const Login = () => {
         <div>
             <div className='lg:w-1/3 w-full mx-auto py-10'>
                 <Helmet>
-                    <title>PicMan-Register</title>
+                    <title>PicMan-Login</title>
                 </Helmet>
 
 
