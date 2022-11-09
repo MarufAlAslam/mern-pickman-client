@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../Utils/Context/UserContext';
 
 const AddService = () => {
@@ -38,6 +40,9 @@ const AddService = () => {
             .catch(err => {
                 console.error(err.message)
             })
+
+        form.reset()
+        toast.success('Service Added Successfully')
     }
 
     return (
@@ -52,26 +57,27 @@ const AddService = () => {
             <form className='mt-10 lg:w-1/2 w-full mx-auto' onSubmit={handleSubmit}>
                 <div className='flex flex-col my-4'>
                     <label htmlFor="title" className='text-white'>Service Title</label>
-                    <input type="text" id='title' placeholder='Enter Service Title' name='servicetitle' className='p-3 mt-2 rounded-lg' />
+                    <input required type="text" id='title' placeholder='Enter Service Title' name='servicetitle' className='p-3 mt-2 rounded-lg' />
                 </div>
 
                 <div className='flex flex-col my-4'>
                     <label htmlFor="title" className='text-white'>Service Image URL</label>
-                    <input type="url" id='title' placeholder='Enter Image URL' name='url' className='p-3 mt-2 rounded-lg' />
+                    <input required type="url" id='title' placeholder='Enter Image URL' name='url' className='p-3 mt-2 rounded-lg' />
                 </div>
                 <div className='flex flex-col my-4'>
                     <label htmlFor="title" className='text-white'>Service Price</label>
-                    <input type="text" id='title' placeholder='Enter Service Price' name='price' className='p-3 mt-2 rounded-lg' />
+                    <input required type="text" id='title' placeholder='Enter Service Price' name='price' className='p-3 mt-2 rounded-lg' />
                 </div>
                 <div className='flex flex-col my-4'>
                     <label htmlFor="title" className='text-white'>Service Description</label>
-                    <textarea cols="30" className='p-3 mt-2 rounded-lg resize-none' name='description' placeholder='Enter Service Details' rows="5"></textarea>
+                    <textarea required cols="30" className='p-3 mt-2 rounded-lg resize-none' name='description' placeholder='Enter Service Details' rows="5"></textarea>
                 </div>
 
                 <div className='flex justify-end'>
                     <button className='bg-blue-500 text-white px-6 py-3 rounded-lg mt-4'>Publish</button>
                 </div>
             </form>
+            <ToastContainer />
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { ToastContainer } from 'react-toastify';
 import About from './About/About';
 import Banner from './Banner/Banner';
 import Clients from './Clients/Clients';
@@ -17,6 +18,7 @@ const Home = () => {
             <Counter></Counter>
             <Clients></Clients>
             <Contact></Contact>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

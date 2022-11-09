@@ -23,7 +23,7 @@ const Blogs = () => {
 
 
                 {
-                    blogs.map(blog => <Blog key={blog.id} blog={blog}></Blog>)
+                    blogs.map((blog, index) => <Blog key={blog.id} index={index} blog={blog}></Blog>)
                 }
 
             </div>
