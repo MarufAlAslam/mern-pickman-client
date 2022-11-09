@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Service.css'
 
@@ -24,7 +25,7 @@ const Service = ({ service }) => {
                     <h3 className='text-2xl font-bold text-white'>
                         ${price}
                     </h3>
-                    <Link to={`/service/${_id}`} className='btn btn-primary'>Book Now</Link>
+                    <Link to={`/service/${_id}`} className='btn btn-primary'>Details <FaArrowAltCircleRight className='ml-2' /></Link>
                 </div>
             </div>
         </div>

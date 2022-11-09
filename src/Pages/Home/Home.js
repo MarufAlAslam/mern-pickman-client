@@ -6,6 +6,7 @@ import Banner from './Banner/Banner';
 import Clients from './Clients/Clients';
 import Contact from './Contact/Contact';
 import Counter from './Counter/Counter';
+import TopServices from './TopServices/TopServices';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
                 <title>PicMan-Home</title>
             </Helmet>
             <Banner></Banner>
+            <TopServices></TopServices>
             <About></About>
             <Counter></Counter>
             <Clients></Clients>
