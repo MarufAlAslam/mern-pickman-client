@@ -7,7 +7,7 @@ import five from './5.png'
 import six from './6.png'
 import seven from './7.png'
 import eight from './8.png'
-import './Clients.module.css'
+import './Clients.css'
 
 const Clients = () => {
     return (

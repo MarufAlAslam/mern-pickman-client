@@ -3,7 +3,9 @@ import './App.css';
 import Blogs from './Pages/Blogs/Blogs';
 import Broken from './Pages/Broken/Broken';
 import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login';
 import Main from './Pages/Main/Main';
+import Register from './Pages/Register/Register';
 import Services from './Pages/Services/Services';
 
 function App() {
@@ -24,6 +26,14 @@ function App() {
           path: 'blogs',
           element: <Blogs></Blogs>,
           loader: () => fetch('http://localhost:5000/blogs'),
+        },
+        {
+          path: 'register',
+          element: <Register></Register>,
+        },
+        {
+          path: 'login',
+          element: <Login></Login>,
         },
         {
           path: '*',
