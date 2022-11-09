@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Utils/Context/UserContext';
 
 const Login = () => {
+
+    const { signIn, error, setError, popUpSignIn, setLoading } = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target
+        const email = form.email.value
+        const password = form.password.value
+        // console.log(email, password)
+        signIn(email, password)
+            .then(
+                result => {
+                    console.log(result)
+                    navigate('/profile')
+                }
+            )
+            .catch(
+                err => {
+                    setError(err.message)
+                }
+            )
+
+    }
+
+
+
+    const handleGoogleSignIn = () => {
+        popUpSignIn().then(result => {
+            const user = result.user;
+            console.log(user);
+            navigate('/profile')
+            setLoading(false)
+        })
+    }
+
     return (
         <div>
             <div className='lg:w-1/3 w-full mx-auto py-10'>
@@ -17,15 +54,18 @@ const Login = () => {
                             Login
                         </h2>
                         <div className='divider'>X</div>
-                        <form className='mt-4'>
+                        <form className='mt-4' onSubmit={handleSubmit}>
                             <div className='flex flex-col my-4'>
                                 <label className='text-white text-xl font-bold' htmlFor="name">Email</label>
-                                <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="name" id="name" />
+                                <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="email" id="name" />
                             </div>
 
                             <div className='flex flex-col my-4'>
                                 <label className='text-white text-xl font-bold' htmlFor="name">Password</label>
                                 <input className='py-3 px-4 mt-2 rounded-lg' type="password" placeholder='Enter Your Password Here' name="password" id="password" />
+                            </div>
+                            <div className='my-4 text-center'>
+                                {error && <p className='text-red-500'>{error}</p>}
                             </div>
                             <div className='flex flex-col mt-6'>
                                 <input className='btn btn-primary' type="submit" value='Register' name="register" id="register" />
@@ -39,7 +79,7 @@ const Login = () => {
                         </p>
                         <div className='divider'></div>
                         <p className='text-center'>
-                            <button className='btn btn-info'>
+                            <button className='btn btn-info' onClick={handleGoogleSignIn}>
                                 Login With Google
                             </button>
                         </p>

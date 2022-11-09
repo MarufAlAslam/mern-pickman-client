@@ -1,14 +1,17 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Utils/Context/UserContext';
 
 const Register = () => {
-    const { createUser, setUser, updateUserName } = useContext(AuthContext)
-    const [error, setError] = useState('');
+    const { createUser, updateUserName, setLoading, error, setError, popUpSignIn } = useContext(AuthContext)
+    // const [error, setError] = useState('');
+
+    const navigate = useNavigate()
 
     const handleSubmit = event => {
         event.preventDefault()
+        setLoading(true)
         const form = event.target
         const name = form.name.value
         const email = form.email.value
@@ -21,7 +24,9 @@ const Register = () => {
                     const user = result.user;
                     updateUserName(name);
                     console.log(user);
-                    setUser(user.displayName);
+                    // setUser(user.displayName);
+                    navigate('/login')
+                    setLoading(false)
                 }
             )
                 .catch(error => {
@@ -34,6 +39,16 @@ const Register = () => {
 
 
         console.log(form)
+    }
+
+
+    const handleGoogleSignIn = () => {
+        popUpSignIn().then(result => {
+            const user = result.user;
+            console.log(user);
+            navigate('/profile')
+            setLoading(false)
+        })
     }
     return (
         <div className='lg:w-1/3 w-full mx-auto py-10'>
@@ -84,7 +99,7 @@ const Register = () => {
                     </p>
                     <div className='divider'></div>
                     <p className='text-center'>
-                        <button className='btn btn-info'>
+                        <button className='btn btn-info' onClick={handleGoogleSignIn}>
                             Login With Google
                         </button>
                     </p>
