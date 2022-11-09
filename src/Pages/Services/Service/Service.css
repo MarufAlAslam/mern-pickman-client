@@ -2,3 +2,7 @@ img.service-img {
     height: 250px;
     object-fit: cover;
 }
+
+.PhotoView-Portal.PhotoView-Slider__clean {
+    z-index: 100;
+}

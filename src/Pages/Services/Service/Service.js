@@ -1,13 +1,19 @@
 import React from 'react';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({ service }) => {
     const { _id, title, imageUrl, price, description, addedBy } = service;
     return (
-        <div className='card overflow-hidden bg-gray-800 shadow-xl'>
-            <img src={imageUrl} className='service-img' alt="" />
+        <div className='card bg-gray-800 shadow-xl'>
+            <PhotoProvider>
+                <PhotoView src={imageUrl}>
+                    <img src={imageUrl} className='service-img' alt="" />
+                </PhotoView>
+            </PhotoProvider>
             <div className='card-body'>
                 <h2 className='text-xl font-bold text-white'>
                     {title}
