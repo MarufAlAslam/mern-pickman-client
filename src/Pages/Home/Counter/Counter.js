@@ -13,7 +13,7 @@ const Counter = () => {
                             Photographer by born
                         </p>
                         <h2 className='text-4xl mt-4 font-extrabold text-white'>
-                            My click creates history, be a part of that
+                            click creates history, be a part of that
                         </h2>
                         <p className='mt-5'>
                             My clicks are not just clicks, they are the moments that you will cherish for a lifetime. I am a professional photographer from New York. I have been doing this for the past 10 years. I have covered many events and have a lot of experience in this field. I am a professional photographer from New York. I have been doing this for the past 10 years. I have covered many events and have a lot of experience in this field.

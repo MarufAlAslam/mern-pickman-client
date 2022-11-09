@@ -14,7 +14,7 @@ const Clients = () => {
         <div className='py-10'>
             <div className='lg:w-5/6 w-full mx-auto py-10'>
                 <h2 className='text-white text-4xl font-bold text-center'>
-                    My Clients
+                    Clients
                 </h2>
 
                 <table className='table w-full text-center mt-8 bg-white clientTable'>

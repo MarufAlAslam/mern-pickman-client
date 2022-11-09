@@ -25,7 +25,7 @@ const About = () => {
     ]
     return (
         <div className='py-10 lg:w-5/6 w-full mx-auto'>
-            <h1 className='text-center text-white text-4xl mb-10 font-bold'>About Me</h1>
+            <h1 className='text-center text-white text-4xl mb-10 font-bold'>About</h1>
             <div className='divider mb-10'>X</div>
             <div className="grid grid-cols-3 gap-10">
                 {

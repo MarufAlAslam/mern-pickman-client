@@ -42,7 +42,7 @@ const Footer = () => {
 
                     <div className='lg:w-1/3 w-full mt-5 lg:mt-0 lg:text-end'>
                         <h2 className='text-2xl font-bold text-gray-800 mb-5'>
-                            Find Me on:
+                            Follow on:
                         </h2>
                         <a href="https://www.facebook.com" className='flex lg:justify-end items-center py-2' target="blank">
                             <FaFacebook className='mr-2' /> Facebook
