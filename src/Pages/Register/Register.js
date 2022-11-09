@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Utils/Context/UserContext';
 
 const Register = () => {
+    const { createUser, setUser, updateUserName } = useContext(AuthContext)
+    const [error, setError] = useState('');
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target
+        const name = form.name.value
+        const email = form.email.value
+        const password = form.password.value
+        const confirmPassword = form.confirmPassword.value
+
+        if (password === confirmPassword) {
+            createUser(email, password).then(
+                result => {
+                    const user = result.user;
+                    updateUserName(name);
+                    console.log(user);
+                    setUser(user.displayName);
+                }
+            )
+                .catch(error => {
+                    setError(error.message)
+                })
+        } else {
+            setError('Password does not match')
+        }
+
+
+
+        console.log(form)
+    }
     return (
         <div className='lg:w-1/3 w-full mx-auto py-10'>
             <Helmet>
@@ -16,10 +48,14 @@ const Register = () => {
                         Register
                     </h2>
                     <div className='divider'>X</div>
-                    <form className='mt-4'>
+                    <form className='mt-4' onSubmit={handleSubmit}>
+                        <div className='flex flex-col my-4'>
+                            <label className='text-white text-xl font-bold' htmlFor="name">Name</label>
+                            <input className='py-3 px-4 mt-2 rounded-lg' type="text" placeholder='Enter Your Name Here' name="name" id="name" />
+                        </div>
                         <div className='flex flex-col my-4'>
                             <label className='text-white text-xl font-bold' htmlFor="name">Email</label>
-                            <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="name" id="name" />
+                            <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="email" id="email" />
                         </div>
 
                         <div className='flex flex-col my-4'>
@@ -31,6 +67,11 @@ const Register = () => {
                             <label className='text-white text-xl font-bold' htmlFor="name">Confirm Password</label>
                             <input className='py-3 px-4 mt-2 rounded-lg' type="password" placeholder='Retype Your Password Again' name="confirmPassword" id="confirmPassword" />
                         </div>
+
+                        <div className='my-4 text-center'>
+                            {error && <p className='text-red-500'>{error}</p>}
+                        </div>
+
                         <div className='flex flex-col mt-6'>
                             <input className='btn btn-primary' type="submit" value='Register' name="register" id="register" />
                         </div>
