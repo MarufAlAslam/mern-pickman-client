@@ -5,3 +5,46 @@ img.logo {
 ul.p-2.bg-base-100 {
     width: 100%;
 }
+
+
+@media screen and (max-width: 992px) {
+    img.logo {
+        width: 30%;
+    }
+
+    ul.menu.menu-horizontal.p-0 {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background: black;
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+        overflow: scroll;
+        padding-bottom: 20px;
+        padding: 20px;
+    }
+
+    .navbar a.btn.btn-ghost.text-black.normal-case.text-xl {
+        text-align: left;
+        padding-left: 0;
+        display: inline;
+        /* padding: 8px; */
+        text-align: center !important;
+        margin: auto;
+        width: 90%;
+        display: flex;
+    }
+
+    .lg\:w-5\/6.w-full.mx-auto {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    img.logo {
+        width: 60%;
+    }
+}

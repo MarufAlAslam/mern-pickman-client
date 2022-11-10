@@ -1,3 +1,19 @@
 .counterImg {
     border-radius: 100px 0;
 }
+
+@media screen and (max-width: 992px) {
+    .counterImg {
+        border-radius: 100px 0;
+        margin-top: 30px;
+    }
+
+    .bg-red-700.sticky.top-0.z-30 {
+        /* position: unset; */
+        margin-bottom: 85px;
+    }
+
+    .w-full {
+        padding: 20px;
+    }
+}

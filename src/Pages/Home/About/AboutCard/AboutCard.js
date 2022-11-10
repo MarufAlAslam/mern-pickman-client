@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutCard = ({ cardDetails }) => {
     return (
-        <div className="card py-10 px-5 h-full bg-gray-800 shadow-xl">
+        <div className="card py-10 px-5 h-full bg-gray-800 shadow-xl my-5">
             <div className="card-body items-start text-start">
                 {cardDetails.icon}
                 <h2 className="card-title text-2xl font-bold text-white">

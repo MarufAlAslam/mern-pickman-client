@@ -4,3 +4,13 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+@media screen and(max-width: 500px) {
+    .lg\:w-1\/4.w-1\/6 {
+        width: 50%;
+    }
+
+    .card-body.mob-p {
+        padding: 0;
+    }
+}

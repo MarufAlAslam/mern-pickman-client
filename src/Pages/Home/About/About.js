@@ -27,7 +27,7 @@ const About = () => {
         <div className='py-10 lg:w-5/6 w-full mx-auto'>
             <h1 className='text-center text-white text-4xl mb-10 font-bold'>About</h1>
             <div className='divider mb-10'>X</div>
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-10">
                 {
                     cardDetails.map(card => <AboutCard key={card.id} cardDetails={card}></AboutCard>)
                 }
