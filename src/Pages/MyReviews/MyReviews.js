@@ -12,7 +12,11 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(url)
+        fetch(url, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [url])
@@ -57,14 +61,13 @@ const MyReviews = () => {
                             <table className='table w-full text-center text-white border-0 reviewTable mt-10'>
                                 <tbody>
                                     <tr>
-                                        <th>Service ID</th>
-                                        <th>Service Name</th>
-                                        <th>Date</th>
-                                        <th>Review</th>
-                                        <th>Rating</th>
-                                        <th colSpan={2}>
-                                            Option
-                                        </th>
+                                        <td>Service ID</td>
+                                        <td>Service Name</td>
+                                        <td>Date</td>
+                                        <td>Review</td>
+                                        <td>Rating</td>
+                                        <td>Edit</td>
+                                        <td>Delete</td>
                                     </tr>
                                     {
                                         reviews.map(review => {

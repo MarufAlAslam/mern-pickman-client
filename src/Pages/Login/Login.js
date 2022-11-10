@@ -21,8 +21,31 @@ const Login = () => {
         signIn(email, password)
             .then(
                 result => {
-                    console.log(result)
-                    navigate(from, { replace: true })
+                    const user = result.user;
+
+                    const currentUser = {
+                        email: user.email
+                    }
+
+                    console.log(currentUser)
+
+                    // get jwt token
+                    fetch('http://localhost:5000/jwt', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(currentUser)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            localStorage.setItem('token', data.token)
+                            navigate(from, { replace: true })
+                        })
+
+
+                    // navigate(from, { replace: true })
                 }
             )
             .catch(
@@ -72,7 +95,7 @@ const Login = () => {
                                 {error && <p className='text-red-500'>{error}</p>}
                             </div>
                             <div className='flex flex-col mt-6'>
-                                <input className='btn btn-primary' type="submit" value='Register' name="register" id="register" />
+                                <input className='btn btn-primary' type="submit" value='Login' name="register" id="register" />
                             </div>
                         </form>
 

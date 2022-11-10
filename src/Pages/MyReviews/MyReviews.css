@@ -1,11 +1,11 @@
 .reviewTable td {
-    border: 3px solid black;
+    border: 3px solid transparent;
     padding: 10px;
     max-width: 20%;
 }
 
 .reviewTable th {
-    border: 3px solid black;
+    border: 3px solid transparent;
     padding: 10px;
     background-color: white;
     color: black;
@@ -14,4 +14,21 @@
 
 .reviewTable {
     max-width: 100%;
+}
+
+.reviewTable tr:nth-child(2n) td {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.overflow-x-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.overflow-x-scroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
