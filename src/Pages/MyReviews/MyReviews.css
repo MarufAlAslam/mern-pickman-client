@@ -1,0 +1,17 @@
+.reviewTable td {
+    border: 3px solid black;
+    padding: 10px;
+    max-width: 20%;
+}
+
+.reviewTable th {
+    border: 3px solid black;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    max-width: 20%;
+}
+
+.reviewTable {
+    max-width: 100%;
+}

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../Utils/Context/UserContext';
@@ -7,9 +7,18 @@ const AddReview = () => {
 
 
     const { user } = useContext(AuthContext)
+    const [serviceName, setServiceName] = useState('');
 
     const serviceId = window.location.pathname.replace('/add-review/', '');
     // console.log(serviceId)
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/servicebyid/${serviceId}`)
+            .then(res => res.json())
+            .then(data => setServiceName(data.title))
+    }, [serviceId])
+
+    // console.log(serviceName)
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -21,6 +30,7 @@ const AddReview = () => {
             reviewBy: user.displayName,
             reviewerEmail: user.email,
             serviceId: serviceId,
+            serviceName: serviceName,
             userPhotoUrl: user.photoURL,
             review: review,
             rating: rating,
