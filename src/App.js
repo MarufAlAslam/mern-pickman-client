@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import AddReview from './Pages/AddReview/AddReview';
 import AddService from './Pages/AddService/AddService';
 import Blogs from './Pages/Blogs/Blogs';
 import Broken from './Pages/Broken/Broken';
@@ -58,6 +59,10 @@ function App() {
         {
           path: 'add-service',
           element: <PrivateRoute><AddService></AddService></PrivateRoute>,
+        },
+        {
+          path: 'add-review/:serviceId',
+          element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
         },
         {
           path: '*',
