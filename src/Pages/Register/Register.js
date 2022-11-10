@@ -48,7 +48,6 @@ const Register = () => {
             const user = result.user;
             console.log(user);
             navigate('/profile')
-            // setLoading(false)
         })
     }
     return (
