@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../Utils/Context/UserContext';
 import './MyReviews.css'
 
@@ -15,6 +16,22 @@ const MyReviews = () => {
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [url])
+
+
+    const handleDelete = (_id) => {
+        fetch(`http://localhost:5000/delete/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.deletedCount > 0) {
+                    console.log(result)
+                    const remaining = reviews.filter(review => review._id !== _id)
+                    setReviews(remaining)
+                }
+            })
+        toast.success('Review Deleted Successfully')
+    }
     return (
         <div className='lg:w-5/6 mx-auto w-full py-10'>
             <Helmet>
@@ -54,7 +71,9 @@ const MyReviews = () => {
                                             return (
                                                 <tr key={review._id}>
                                                     <td className='border px-4 py-2'>
-                                                        {review.serviceId}
+                                                        <Link to={`/service/${review.serviceId}`} className='text-blue-800'>
+                                                            {review.serviceId}
+                                                        </Link>
                                                     </td>
                                                     <td className='border px-4 py-2'>
                                                         {review.serviceName}
@@ -69,12 +88,12 @@ const MyReviews = () => {
                                                         {review.rating}
                                                     </td>
                                                     <td className='border px-4 py-2'>
-                                                        <button className='btn btn-primary'>
+                                                        <Link to={`/update/${review._id}`} className='btn btn-primary'>
                                                             <FaEdit />
-                                                        </button>
+                                                        </Link>
                                                     </td>
                                                     <td className='border px-4 py-2'>
-                                                        <button className='btn btn-error'>
+                                                        <button className='btn btn-error' onClick={() => { handleDelete(review._id) }}>
                                                             <FaTrash />
                                                         </button>
                                                     </td>
@@ -86,6 +105,7 @@ const MyReviews = () => {
                                     }
                                 </tbody>
                             </table>
+                            <ToastContainer />
                         </div>
                     )
             }

@@ -17,6 +17,8 @@ const UserContext = ({ children }) => {
 
     const provider = new GoogleAuthProvider();
 
+
+
     // const navigate = useNavigate()
 
     const popUpSignIn = () => {
