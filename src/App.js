@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Main from './Pages/Main/Main';
 import MyReviews from './Pages/MyReviews/MyReviews';
+import UpdateReview from './Pages/MyReviews/UpdateReview/UpdateReview';
 import Profile from './Pages/Profile/Profile';
 import Register from './Pages/Register/Register';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
@@ -63,6 +64,11 @@ function App() {
         {
           path: 'add-review/:serviceId',
           element: <PrivateRoute><AddReview></AddReview></PrivateRoute>,
+        },
+        {
+          path: 'update/:id',
+          element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
+          loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
         },
         {
           path: '*',
