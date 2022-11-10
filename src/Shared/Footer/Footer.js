@@ -5,7 +5,7 @@ import footerLogo from './footer-logo.png'
 
 const Footer = () => {
     return (
-        <div className='bg-white pt-16 pb-6'>
+        <div className='bg-gray-600 text-white pt-16 pb-6'>
             <div className='lg:w-5/6 w-full mx-auto'>
                 <div className='lg:flex block justify-between'>
                     <div className='lg:w-1/3 w-full'>
@@ -17,7 +17,7 @@ const Footer = () => {
                     </div>
 
                     <div className='lg:w-1/3 w-full lg:text-center mt-5 lg:mt-0 lg:pl-10 pl-0'>
-                        <h2 className='text-2xl font-bold text-gray-800'>
+                        <h2 className='text-2xl font-bold text-white'>
                             Useful Links
                         </h2>
 
@@ -41,7 +41,7 @@ const Footer = () => {
                     </div>
 
                     <div className='lg:w-1/3 w-full mt-5 lg:mt-0 lg:text-end'>
-                        <h2 className='text-2xl font-bold text-gray-800 mb-5'>
+                        <h2 className='text-2xl font-bold text-white mb-5'>
                             Follow on:
                         </h2>
                         <a href="https://www.facebook.com" className='flex lg:justify-end items-center py-2' target="blank">
@@ -59,9 +59,9 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='divider'></div>
+                <div className='divider text-white'></div>
                 <div className='mt-5'>
-                    <p className='text-center text-gray-500'>
+                    <p className='text-center text-white'>
                         © 2022 PicMan. All rights reserved.
                     </p>
                 </div>

@@ -9,6 +9,7 @@ import Main from './Pages/Main/Main';
 import MyReviews from './Pages/MyReviews/MyReviews';
 import Profile from './Pages/Profile/Profile';
 import Register from './Pages/Register/Register';
+import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Services from './Pages/Services/Services';
 
 function App() {
@@ -26,6 +27,11 @@ function App() {
           path: 'services',
           element: <Services></Services>,
           loader: () => fetch('http://localhost:5000/services')
+        },
+        {
+          path: 'service/:id',
+          element: <ServiceDetails></ServiceDetails>,
+          loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
         },
         {
           path: 'blogs',
