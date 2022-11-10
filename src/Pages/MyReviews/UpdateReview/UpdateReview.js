@@ -32,7 +32,7 @@ const UpdateReview = () => {
         }
         setUpdatedData(reviewData)
 
-        fetch(`http://localhost:5000/update/${data._id}`, {
+        fetch(`https://picman-server.vercel.app/update/${data._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

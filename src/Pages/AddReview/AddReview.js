@@ -13,7 +13,7 @@ const AddReview = () => {
     // console.log(serviceId)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/servicebyid/${serviceId}`)
+        fetch(`https://picman-server.vercel.app/servicebyid/${serviceId}`)
             .then(res => res.json())
             .then(data => setServiceName(data.title))
     }, [serviceId])
@@ -37,7 +37,7 @@ const AddReview = () => {
             reviewDate: new Date().toDateString()
         }
 
-        fetch('http://localhost:5000/addreview', {
+        fetch('https://picman-server.vercel.app/addreview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

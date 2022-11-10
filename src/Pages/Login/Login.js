@@ -30,7 +30,7 @@ const Login = () => {
                     console.log(currentUser)
 
                     // get jwt token
-                    fetch('http://localhost:5000/jwt', {
+                    fetch('https://picman-server.vercel.app/jwt', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const Login = () => {
             console.log(currentUser)
 
             // get jwt token
-            fetch('http://localhost:5000/jwt', {
+            fetch('https://picman-server.vercel.app/jwt', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -103,12 +103,12 @@ const Login = () => {
                         <form className='mt-4' onSubmit={handleSubmit}>
                             <div className='flex flex-col my-4'>
                                 <label className='text-white text-xl font-bold' htmlFor="name">Email</label>
-                                <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="email" id="name" />
+                                <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="email" id="name" required />
                             </div>
 
                             <div className='flex flex-col my-4'>
                                 <label className='text-white text-xl font-bold' htmlFor="name">Password</label>
-                                <input className='py-3 px-4 mt-2 rounded-lg' type="password" placeholder='Enter Your Password Here' name="password" id="password" />
+                                <input className='py-3 px-4 mt-2 rounded-lg' type="password" placeholder='Enter Your Password Here' name="password" id="password" required />
                             </div>
                             <div className='my-4 text-center'>
                                 {error && <p className='text-red-500'>{error}</p>}

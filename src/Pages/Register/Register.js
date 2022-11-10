@@ -67,15 +67,15 @@ const Register = () => {
                     <form className='mt-4' onSubmit={handleSubmit}>
                         <div className='flex flex-col my-4'>
                             <label className='text-white text-xl font-bold' htmlFor="name">Name</label>
-                            <input className='py-3 px-4 mt-2 rounded-lg' type="text" placeholder='Enter Your Name Here' name="name" id="name" />
+                            <input className='py-3 px-4 mt-2 rounded-lg' type="text" placeholder='Enter Your Name Here' name="name" id="name" required />
                         </div>
                         <div className='flex flex-col my-4'>
                             <label className='text-white text-xl font-bold' htmlFor="name">Photo URL</label>
-                            <input className='py-3 px-4 mt-2 rounded-lg' type="text" placeholder='Enter Your Photo URL' name="photourl" id="name" />
+                            <input className='py-3 px-4 mt-2 rounded-lg' type="text" placeholder='Enter Your Photo URL' name="photourl" id="name" required />
                         </div>
                         <div className='flex flex-col my-4'>
                             <label className='text-white text-xl font-bold' htmlFor="name">Email</label>
-                            <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="email" id="email" />
+                            <input className='py-3 px-4 mt-2 rounded-lg' type="email" placeholder='Enter Your Email Here' name="email" id="email" required />
                         </div>
 
                         <div className='flex flex-col my-4'>

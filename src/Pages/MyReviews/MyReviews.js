@@ -8,7 +8,7 @@ import './MyReviews.css'
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext)
-    const url = `http://localhost:5000/reviews?email=${user.email}`
+    const url = `https://picman-server.vercel.app/reviews?email=${user.email}`
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const MyReviews = () => {
 
 
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/delete/${_id}`, {
+        fetch(`https://picman-server.vercel.app/delete/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

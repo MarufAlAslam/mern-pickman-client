@@ -9,7 +9,7 @@ const Reviews = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${serviceId}`)
+        fetch(`https://picman-server.vercel.app/reviews/${serviceId}`)
             .then(res => res.json())
             .then(data =>
                 setReviews(data.reverse())

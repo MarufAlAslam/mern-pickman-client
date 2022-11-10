@@ -25,7 +25,7 @@ const AddService = () => {
             rating: 0
         }
 
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://picman-server.vercel.app/addservice', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

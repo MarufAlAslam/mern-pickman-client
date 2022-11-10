@@ -24,22 +24,22 @@ function App() {
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('http://localhost:5000/top')
+          loader: () => fetch('https://picman-server.vercel.app/top')
         },
         {
           path: 'services',
           element: <Services></Services>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('https://picman-server.vercel.app/services')
         },
         {
           path: 'service/:id',
           element: <ServiceDetails></ServiceDetails>,
-          loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
+          loader: ({ params }) => fetch(`https://picman-server.vercel.app/service/${params.id}`)
         },
         {
           path: 'blogs',
           element: <Blogs></Blogs>,
-          loader: () => fetch('http://localhost:5000/blogs'),
+          loader: () => fetch('https://picman-server.vercel.app/blogs'),
         },
         {
           path: 'register',
@@ -68,7 +68,7 @@ function App() {
         {
           path: 'update/:id',
           element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-          loader: ({ params }) => fetch(`http://localhost:5000/update/${params.id}`)
+          loader: ({ params }) => fetch(`https://picman-server.vercel.app/update/${params.id}`)
         },
         {
           path: '*',
