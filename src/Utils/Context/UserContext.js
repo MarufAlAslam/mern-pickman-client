@@ -34,10 +34,11 @@ const UserContext = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const updateUserName = (name) => {
+    const updateUserName = (name, photourl) => {
         setLoading(true)
         updateProfile(auth.currentUser, {
-            displayName: name
+            displayName: name,
+            photoURL: photourl
         })
     }
 

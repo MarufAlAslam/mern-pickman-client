@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { AuthContext } from '../../Utils/Context/UserContext';
+import './Profile.css'
 
 const Profile = () => {
     const { user } = useContext(AuthContext)
@@ -9,9 +10,12 @@ const Profile = () => {
             <Helmet>
                 <title>PicMan-Profile</title>
             </Helmet>
-            <h1 className='text-center text-5xl font-bold'>
+            <div className='text-center'>
+                <img src={user.photoURL} className='dp' alt="" />
+            </div>
+            <h1 className='text-center text-3xl mt-5 font-bold'>
                 {
-                    user.displayName
+                    user.displayName ? user.displayName : user.email
                 }
             </h1>
         </div>

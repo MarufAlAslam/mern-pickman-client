@@ -14,6 +14,7 @@ const Register = () => {
         // setLoading(true)
         const form = event.target
         const name = form.name.value
+        const photourl = form.photourl.value
         const email = form.email.value
         const password = form.password.value
         const confirmPassword = form.confirmPassword.value
@@ -22,7 +23,7 @@ const Register = () => {
             createUser(email, password).then(
                 result => {
                     const user = result.user;
-                    updateUserName(name);
+                    updateUserName(name, photourl);
                     console.log(user);
                     // setUser(user.displayName);
                     navigate('/login')
@@ -67,6 +68,10 @@ const Register = () => {
                         <div className='flex flex-col my-4'>
                             <label className='text-white text-xl font-bold' htmlFor="name">Name</label>
                             <input className='py-3 px-4 mt-2 rounded-lg' type="text" placeholder='Enter Your Name Here' name="name" id="name" />
+                        </div>
+                        <div className='flex flex-col my-4'>
+                            <label className='text-white text-xl font-bold' htmlFor="name">Photo URL</label>
+                            <input className='py-3 px-4 mt-2 rounded-lg' type="text" placeholder='Enter Your Photo URL' name="photourl" id="name" />
                         </div>
                         <div className='flex flex-col my-4'>
                             <label className='text-white text-xl font-bold' htmlFor="name">Email</label>
