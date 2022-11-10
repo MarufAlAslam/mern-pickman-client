@@ -1,4 +1,4 @@
-# Hey, Welcome to PicMan
+# Hey, Welcome to PicMan 
 
 you're probably here because you want to know how to use PicMan, so let's get started.
 
@@ -33,9 +33,6 @@ Server Side Repo: https://github.com/Porgramming-Hero-web-course/b6a11-service-r
 22. React Image View
 
 and so on...
-
-
-## Functionalities
 
 
 ## How I built it

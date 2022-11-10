@@ -5,7 +5,13 @@
     object-fit: cover;
 }
 
-@media screen and(max-width: 500px) {
+@media screen and (max-width: 992px) {
+    img.mb-6.w-full {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .lg\:w-1\/4.w-1\/6 {
         width: 50%;
     }
