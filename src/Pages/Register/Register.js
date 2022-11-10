@@ -4,14 +4,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Utils/Context/UserContext';
 
 const Register = () => {
-    const { createUser, updateUserName, setLoading, error, setError, popUpSignIn } = useContext(AuthContext)
+    const { createUser, updateUserName, error, setError, popUpSignIn } = useContext(AuthContext)
     // const [error, setError] = useState('');
 
     const navigate = useNavigate()
 
     const handleSubmit = event => {
         event.preventDefault()
-        setLoading(true)
+        // setLoading(true)
         const form = event.target
         const name = form.name.value
         const email = form.email.value
@@ -26,7 +26,7 @@ const Register = () => {
                     console.log(user);
                     // setUser(user.displayName);
                     navigate('/login')
-                    setLoading(false)
+                    // setLoading(false)
                 }
             )
                 .catch(error => {
@@ -47,7 +47,7 @@ const Register = () => {
             const user = result.user;
             console.log(user);
             navigate('/profile')
-            setLoading(false)
+            // setLoading(false)
         })
     }
     return (

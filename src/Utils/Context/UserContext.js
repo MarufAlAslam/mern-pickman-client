@@ -20,18 +20,22 @@ const UserContext = ({ children }) => {
     // const navigate = useNavigate()
 
     const popUpSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, provider)
     }
 
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const signIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const updateUserName = (name) => {
+        setLoading(true)
         updateProfile(auth.currentUser, {
             displayName: name
         })
@@ -41,14 +45,13 @@ const UserContext = ({ children }) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            if (currentUser) {
-                console.log(currentUser)
-                setUser(currentUser);
-                setLoading(false);
-            }
+            setUser(currentUser);
+            setLoading(false);
         });
 
-        return unsubscribe;
+        return () => {
+            unsubscribe();
+        };
     }, []);
 
 
@@ -58,18 +61,6 @@ const UserContext = ({ children }) => {
         }).catch((error) => {
             console.log(error.message);
         });
-        // signOut(auth)
-        //     .then(
-        //         () => {
-        //             setUser({});
-        //             <Navigate to='/login' />
-        //         }
-        //     )
-        //     .catch(
-        //         err => {
-        //             console.error(err)
-        //         }
-        //     )
     }
 
     const AuthInfo = {

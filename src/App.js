@@ -11,6 +11,7 @@ import Profile from './Pages/Profile/Profile';
 import Register from './Pages/Register/Register';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Services from './Pages/Services/Services';
+import PrivateRoute from './Utils/Routes/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -48,15 +49,15 @@ function App() {
         },
         {
           path: 'profile',
-          element: <Profile></Profile>,
+          element: <PrivateRoute><Profile></Profile></PrivateRoute>,
         },
         {
           path: 'my-reviews',
-          element: <MyReviews></MyReviews>,
+          element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
         },
         {
           path: 'add-service',
-          element: <AddService></AddService>,
+          element: <PrivateRoute><AddService></AddService></PrivateRoute>,
         },
         {
           path: '*',

@@ -1,12 +1,16 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Utils/Context/UserContext';
 
 const Login = () => {
 
-    const { signIn, error, setError, popUpSignIn, setLoading } = useContext(AuthContext)
+    const { signIn, error, setError, popUpSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
+
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/profile'
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -18,7 +22,7 @@ const Login = () => {
             .then(
                 result => {
                     console.log(result)
-                    navigate('/profile')
+                    navigate(from, { replace: true })
                 }
             )
             .catch(
@@ -35,8 +39,8 @@ const Login = () => {
         popUpSignIn().then(result => {
             const user = result.user;
             console.log(user);
-            navigate('/profile')
-            setLoading(false)
+            navigate(from, { replace: true })
+            // setLoading(false)
         })
     }
 

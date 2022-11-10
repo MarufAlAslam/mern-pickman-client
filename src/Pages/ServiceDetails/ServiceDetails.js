@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Utils/Context/UserContext';
 
 const ServiceDetails = () => {
+    const { user } = useContext(AuthContext)
     const details = useLoaderData()
     console.log(details)
     return (
@@ -31,6 +33,16 @@ const ServiceDetails = () => {
                                         <span className='text-white font-bold'>Course By: </span>
                                         <span className='text-info'>{detail.addedBy}</span>
                                     </p>
+
+                                    <div className='divider'></div>
+                                    {
+                                        user ? (
+                                            <button className='btn btn-primary mt-4 w-full'>Add a Review</button>
+                                        ) :
+                                            (
+                                                <Link to='/add-review' className='btn w-full btn-primary mt-4'>Please Login to Add a Review</Link>
+                                            )
+                                    }
                                 </div>
                             )
                         }
