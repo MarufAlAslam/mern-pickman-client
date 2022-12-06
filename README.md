@@ -4,7 +4,7 @@ you're probably here because you want to know how to use PicMan, so let's get st
 
 Live Link: https://picman-a11.web.app/
 
-Server Side Repo: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-MarufAlAslam
+Server Side Repo: https://github.com/MarufAlAslam/mern-pickman-server
 
 
 
